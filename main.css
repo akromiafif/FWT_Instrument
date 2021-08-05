@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background-color: #f59300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1rem;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem;
+}
+
+img {
+  width: 15rem;
+}
+
+.airspeed,
+.barometer,
+.compass,
+.altitude {
+  position: relative;
+}
+
+#airspeed-arrow {
+  position: absolute;
+  top: 3.5rem;
+  left: 7rem;
+  transform-origin: 40% 75%;
+  transform-box: fill-box;
+  animation: airspeed 1s ease infinite;
+}
+
+#updown-arrow {
+  position: absolute;
+  top: 4rem;
+  left: 3rem;
+  transform-origin: 95% 45%;
+  transform-box: fill-box;
+  width: 5rem;
+  animation: airspeed 1s ease infinite;
+}
+
+#arrow-compass {
+  position: absolute;
+  top: 1.5rem;
+  left: 5.8rem;
+  transform-origin: center center;
+  transform-box: fill-box;
+  width: 4rem;
+  animation: airspeed 1s ease infinite;
+}
+
+@keyframes airspeed {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#alt-text {
+  position: absolute;
+  top: 8.3rem;
+  left: 7.2rem;
+  font-family: "Poppins", sans-serif;
+  z-index: 999;
+  font-size: 0.7rem;
+}

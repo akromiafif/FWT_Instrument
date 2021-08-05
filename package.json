@@ -1,0 +1,20 @@
+{
+  "name": "fwt_instrument",
+  "version": "1.0.0",
+  "description": "FWT Tubitak Instrument",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Afif Akromi",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^13.1.8",
+    "mavlink": "^1.0.1",
+    "serialport": "^9.2.0"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^2.3.5"
+  }
+}
