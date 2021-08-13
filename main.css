@@ -62,7 +62,7 @@ img {
   transform-origin: center center;
   transform-box: fill-box;
   width: 4rem;
-  animation: airspeed 1s ease infinite;
+  /* animation: airspeed 1s ease infinite; */
 }
 
 @keyframes airspeed {

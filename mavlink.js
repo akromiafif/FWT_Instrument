@@ -1,6 +1,7 @@
 let serialportmodule = require("serialport");
 let serialport = new serialportmodule("COM10", { baudRate: 115200 });
 let v1 = require("./v1.js");
+const anime = require("animejs");
 
 /* ONCLICK BUTTON BUAT STARTMAVLINK */
 // const startBtn = document.getElementById("startMav");
@@ -11,7 +12,15 @@ let v1 = require("./v1.js");
 
 START_MAVLINK();
 
-/* ONCLICK BUTTON BUAT STARTMAVLINK */
+function startAnimation() {
+  anime({
+    targets: "#arrow-compass",
+    rotate: Math.round((v1.att.yaw * 180) / Math.PI + 110),
+    duration: 0,
+  });
+
+  requestAnimationFrame(startAnimation);
+}
 
 /*  --------------------------------- START MAVLINK --------------------------------- */
 function START_MAVLINK() {
@@ -29,9 +38,7 @@ function START_MAVLINK() {
         v1.v1parse(data);
       });
 
-      setInterval(() => {
-        console.log(v1.att);
-      }, 1000);
+      startAnimation();
     } else {
       console.log("Failed to start");
     }

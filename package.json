@@ -10,6 +10,7 @@
   "author": "Afif Akromi",
   "license": "MIT",
   "dependencies": {
+    "animejs": "^3.2.1",
     "electron": "^13.1.8",
     "mavlink": "^1.0.1",
     "serialport": "^9.2.0"
