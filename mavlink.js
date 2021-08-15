@@ -18,13 +18,21 @@ function startAnimation() {
     rotate: (v1.att.yaw * 180) / Math.PI + 110,
     duration: 0,
     easing: "linear",
-    round: 0,
+    round: 1,
   });
 
   anime({
     targets: "#alt-text",
-    innerHTML: v1.att.alt,
+    innerHTML: Math.abs(v1.att.alt),
     duration: 0,
+    round: 1,
+  });
+
+  anime({
+    targets: "#airspeed-arrow",
+    rotate: Math.round(Math.abs(v1.att.alt / 0.0222222)),
+    duration: 0,
+    easing: "linear",
     round: 1,
   });
 

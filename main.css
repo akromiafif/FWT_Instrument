@@ -42,7 +42,7 @@ img {
   left: 7rem;
   transform-origin: 40% 75%;
   transform-box: fill-box;
-  animation: airspeed 1s ease infinite;
+  /* animation: airspeed 1s ease infinite; */
 }
 
 #updown-arrow {
