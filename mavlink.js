@@ -15,8 +15,17 @@ START_MAVLINK();
 function startAnimation() {
   anime({
     targets: "#arrow-compass",
-    rotate: Math.round((v1.att.yaw * 180) / Math.PI + 110),
+    rotate: (v1.att.yaw * 180) / Math.PI + 110,
     duration: 0,
+    easing: "linear",
+    round: 0,
+  });
+
+  anime({
+    targets: "#alt-text",
+    innerHTML: v1.att.alt,
+    duration: 0,
+    round: 1,
   });
 
   requestAnimationFrame(startAnimation);
