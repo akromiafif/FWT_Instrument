@@ -10,7 +10,7 @@ const anime = require("animejs");
 //   START_MAVLINK();
 // });
 
-START_MAVLINK();
+// START_MAVLINK();
 
 function startAnimation() {
   anime({
