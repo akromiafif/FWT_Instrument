@@ -21,6 +21,14 @@ function startAnimation() {
     round: 1,
   });
 
+  // anime({
+  //   targets: ".sky",
+  //   rotate: 30,
+  //   translateY: 20,
+  //   duration: 0,
+  //   easing: "linear",
+  // });
+
   anime({
     targets: "#alt-text",
     innerHTML: Math.abs(v1.att.alt),
@@ -29,7 +37,7 @@ function startAnimation() {
   });
 
   anime({
-    targets: "#airspeed-arrow",
+    targets: "#altitude-arrow",
     rotate: Math.round(Math.abs(v1.att.alt / 0.0222222)),
     duration: 0,
     easing: "linear",
@@ -38,6 +46,8 @@ function startAnimation() {
 
   requestAnimationFrame(startAnimation);
 }
+
+startAnimation();
 
 /*  --------------------------------- START MAVLINK --------------------------------- */
 function START_MAVLINK() {

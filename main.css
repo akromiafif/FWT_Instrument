@@ -4,11 +4,11 @@
 
 body {
   padding: 0;
+  background-color: #f59300;
   margin: 0;
 }
 
 .container {
-  background-color: #f59300;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,8 @@ img {
   position: relative;
 }
 
-#airspeed-arrow {
+#airspeed-arrow,
+#altitude-arrow {
   position: absolute;
   top: 3.5rem;
   left: 7rem;
@@ -81,4 +82,21 @@ img {
   font-family: "Poppins", sans-serif;
   z-index: 999;
   font-size: 0.7rem;
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  height: 240px;
+  width: 240px;
+}
+
+.heading .sky {
+  position: absolute;
+  z-index: -1;
+  right: -12.6rem;
+  top: -32.7rem;
+  width: 40rem;
 }
