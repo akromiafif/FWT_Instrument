@@ -10,7 +10,7 @@ const anime = require("animejs");
 //   START_MAVLINK();
 // });
 
-// START_MAVLINK();
+START_MAVLINK();
 
 function startAnimation() {
   anime({
@@ -21,13 +21,13 @@ function startAnimation() {
     round: 1,
   });
 
-  // anime({
-  //   targets: ".sky",
-  //   rotate: 30,
-  //   translateY: 20,
-  //   duration: 0,
-  //   easing: "linear",
-  // });
+  anime({
+    targets: ".sky",
+    rotate: Math.round((v1.att.roll * 180) / Math.PI),
+    translateY: Math.round(((v1.att.pitch * 180) / Math.PI) * -1),
+    duration: 0,
+    easing: "linear",
+  });
 
   anime({
     targets: "#alt-text",
@@ -38,7 +38,15 @@ function startAnimation() {
 
   anime({
     targets: "#altitude-arrow",
-    rotate: Math.round(Math.abs(v1.att.alt / 0.0222222)),
+    rotate: Math.round(Math.abs(v1.att.alt / 0.1111111)),
+    duration: 0,
+    easing: "linear",
+    round: 1,
+  });
+
+  anime({
+    targets: "#airspeed-arrow",
+    rotate: Math.round(Math.abs(v1.att.airspeed / 0.1111111)),
     duration: 0,
     easing: "linear",
     round: 1,

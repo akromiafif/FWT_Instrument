@@ -16,15 +16,10 @@ let att = {
   pitch: 0,
   roll: 0,
   yaw: 0,
-  rollspeed: 0,
-  pitchspeed: 0,
-  yawspeed: 0,
   airspeed: 0,
   groundspeed: 0,
-  heading: 0,
-  throtlle: 0,
   alt: 0,
-  climb: 0,
+  vy: 0,
 };
 
 //Nunggu sampe module mavlink ready
@@ -47,8 +42,7 @@ mavLinkv1receive.on("ready", function () {
     });
 
     mavLinkv1receive.on("GLOBAL_POSITION_INT", function (message, fields) {
-      att.lon = fields.lon;
-      att.lat = fields.lat;
+      att.vy = fields.vy;
     });
   });
 });

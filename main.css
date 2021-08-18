@@ -46,7 +46,7 @@ img {
   /* animation: airspeed 1s ease infinite; */
 }
 
-#updown-arrow {
+#vertical-arrow {
   position: absolute;
   top: 4rem;
   left: 3rem;
@@ -64,15 +64,6 @@ img {
   transform-box: fill-box;
   width: 4rem;
   /* animation: airspeed 1s ease infinite; */
-}
-
-@keyframes airspeed {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
 }
 
 #alt-text {
