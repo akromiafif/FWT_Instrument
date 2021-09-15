@@ -18,6 +18,7 @@ let att = {
   yaw: 0,
   airspeed: 0,
   groundspeed: 0,
+  heading: 0,
   alt: 0,
   vy: 0,
 };
@@ -38,11 +39,15 @@ mavLinkv1receive.on("ready", function () {
     mavLinkv1receive.on("VFR_HUD", function (message, fields) {
       att.airspeed = fields.airspeed;
       att.groundspeed = fields.groundspeed;
-      att.alt = fields.alt;
+      // att.alt = fields.alt;
+      att.heading = fields.heading;
+
+      console.log(fields.alt);
     });
 
     mavLinkv1receive.on("GLOBAL_POSITION_INT", function (message, fields) {
-      att.vy = fields.vy;
+      att.vy = fields.vy / 100;
+      att.alt = fields.relative_alt / 1000;
     });
   });
 });

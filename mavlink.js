@@ -1,5 +1,5 @@
 let serialportmodule = require("serialport");
-let serialport = new serialportmodule("COM10", { baudRate: 115200 });
+let serialport = new serialportmodule("COM6", { baudRate: 57600 });
 let v1 = require("./v1.js");
 const anime = require("animejs");
 
@@ -15,7 +15,8 @@ START_MAVLINK();
 function startAnimation() {
   anime({
     targets: "#arrow-compass",
-    rotate: (v1.att.yaw * 180) / Math.PI + 110,
+    // rotate: (v1.att.yaw * 180) / Math.PI + 110,
+    rotate: v1.att.heading,
     duration: 0,
     easing: "linear",
     round: 1,
@@ -23,8 +24,8 @@ function startAnimation() {
 
   anime({
     targets: ".sky",
-    rotate: Math.round((v1.att.roll * 180) / Math.PI),
-    translateY: Math.round(((v1.att.pitch * 180) / Math.PI) * -1),
+    rotate: Math.round(((v1.att.roll * 180) / Math.PI) * -1),
+    translateY: Math.round((v1.att.pitch * 180) / Math.PI),
     duration: 0,
     easing: "linear",
   });
@@ -47,6 +48,14 @@ function startAnimation() {
   anime({
     targets: "#airspeed-arrow",
     rotate: Math.round(Math.abs(v1.att.airspeed / 0.1111111)),
+    duration: 0,
+    easing: "linear",
+    round: 1,
+  });
+
+  anime({
+    targets: "#vertical-arrow",
+    rotate: Math.round(Math.abs(v1.att.vy / 0.13888889)),
     duration: 0,
     easing: "linear",
     round: 1,
