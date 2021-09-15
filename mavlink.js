@@ -1,5 +1,5 @@
 let serialportmodule = require("serialport");
-let serialport = new serialportmodule("COM6", { baudRate: 57600 });
+let serialport = new serialportmodule("COM12", { baudRate: 57600 });
 let v1 = require("./v1.js");
 const anime = require("animejs");
 

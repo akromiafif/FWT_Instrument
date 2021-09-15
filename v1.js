@@ -41,8 +41,6 @@ mavLinkv1receive.on("ready", function () {
       att.groundspeed = fields.groundspeed;
       // att.alt = fields.alt;
       att.heading = fields.heading;
-
-      console.log(fields.alt);
     });
 
     mavLinkv1receive.on("GLOBAL_POSITION_INT", function (message, fields) {
